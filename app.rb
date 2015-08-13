@@ -4,9 +4,26 @@ also_reload("lib/**/*.rb")
 require("./lib/contacts")
 
 
-get("/") do
-  erb(:index)
+get("/") do  # goes to URL
+  erb(:index)   # home page file name
 end
+
+post('/success') do
+  first_name = params.fetch("first_name")
+  last_name = params.fetch("last_name")
+  job_title = params.fetch("job_title")
+  company = params.fetch("company")
+  contact = Contact.new({:first_name=>"Lisa",:last_name=> "VanHausen", :job_title=>"Pet Groomer",:company=> "ACME"})
+  contact.save()
+  erb(:success)
+end
+
+get("/saved_contacts") do
+  erb(:saved_contacts)
+end
+
+
+
 
 # get('/vehicles') do
 #   @vehicles = Vehicle.all()
@@ -17,14 +34,7 @@ end
 #   erb(:vehicles_form)
 # end
 #
-# post('/vehicles') do
-#   make = params.fetch("make")
-#   model = params.fetch("model")
-#   year = params.fetch("year")
-#   vehicle = Vehicle.new(make, model, year)
-#   vehicle.save()
-#   erb(:success)
-# end
+
 #
 # get('/vehicles/:id') do
 #   @vehicle = Vehicle.find(params.fetch("id").to_i())
