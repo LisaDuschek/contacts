@@ -5,11 +5,11 @@
 
   <% @saved_contacts.each() do |contact| %>
 
-  <li><a href="/contact_details/<%= contact.first_name() %>">
+  <li><a href="/contact_details/<%= contact.id() %>">
     <%= contact.first_name() %>
     <%= contact.last_name() %>
     <%= contact.job_title() %>
     <%= contact.company() %> </a></li>
-    
+
     <% end %>
   </ul>

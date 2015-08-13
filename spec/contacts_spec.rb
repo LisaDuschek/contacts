@@ -60,7 +60,23 @@ end
    end
  end
 
+describe('#id') do
+  it('returns the id of the contact') do
+  test_contact = Contact.new({:first_name=>"Lisa",:last_name=> "VanHausen", :job_title=>"Pet Groomer", :company=> "ACME", :id=>1})
+  test_contact.save()
+  expect(test_contact.id()).to(eq(1))
+  end
+end
 
+describe('.find') do
+  it('returns contact by id number') do
+    test_contact = Contact.new({:first_name=>"Lisa",:last_name=> "VanHausen", :job_title=>"Pet Groomer", :company=> "ACME", :id=>1})
+    test_contact.save()
+    test_contact2 = Contact.new({:first_name=>"Bob",:last_name=> "VanHausen", :job_title=>"Pet Groomer", :company=> "ACME", :id=>2})
+    test_contact2.save()
+    expect(Contact.find(test_contact.id())).to(eq(test_contact))
+end
+end
 
 
 

@@ -2,11 +2,14 @@
   <h1>Your Contact Details</h1>
 </div>
 
-<%= @contact.first_name() %>
+<h2>  <%= @contact.first_name() %>
+  <%= @contact.last_name() %>
+  <%= @contact.job_title() %>
+  <%= @contact.company() %>
 
-<!-- <% @contact.phones().each() do |phone| %>
-  <%= phone.number() %>
-<% end %> -->
+  <%= @contact.area_code() %></h2>
+
+
 
 <h4>Add your contact details</h4>
 <form action="/contact_details" method="post">

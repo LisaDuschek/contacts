@@ -28,11 +28,11 @@ get('/contact_details/:id') do
   # "contact id: " + params.fetch('id')
 
   @contact = Contact.find(params.fetch("id").to_i())
-  # area_code = params.fetch("area_code")
-  # number = params.fetch("number")
-  # type = params.fetch("type")
-  # phone = Phone.new({:area_code=>area_code,:number=> number, :type=>type})
-  # phone.save()
+  area_code = params.fetch("area_code")
+  number = params.fetch("number")
+  type = params.fetch("type")
+  phone = Phone.new({:area_code=>area_code,:number=> number, :type=>type})
+  phone.save()
   erb(:contact_details)
 end
 
@@ -44,5 +44,10 @@ post('/contact_details') do
   contact = Contact.new({:first_name=>first_name,:last_name=> last_name, :job_title=>job_title,:company=> company})
   contact.save()
 
+  area_code = params.fetch("area_code")
+  number = params.fetch("number")
+  type = params.fetch("type")
+  phone = Phone.new({:area_code=>area_code,:number=> number, :type=>type})
+  phone.save()
   erb(:contact_details)
 end
