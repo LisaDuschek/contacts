@@ -21,13 +21,4 @@ class Contact
     @@contacts = []
   end
 
-
-
-
-
-
-
-
-
-
 end

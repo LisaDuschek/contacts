@@ -1,7 +1,12 @@
 require('rspec')
 require('contacts')
+require('phone')
 
 describe('Phone') do
+
+  # before() do
+  #   Phone.clear()
+  # end
 
   describe('.all') do
     it('creates an empty array')do
@@ -27,7 +32,7 @@ describe('#area_code') do
   it('returns the number area code') do
     test_number = Phone.new({:area_code=>503,:number=>1234567 , :type=>"office"})
     test_number.save()
-    expect(test_number.area_code).to(eq([503]))
+    expect(test_number.area_code()).to(eq(503))
   end
 end
 
@@ -35,7 +40,7 @@ describe('#number') do
   it('returns the number area code') do
     test_number = Phone.new({:area_code=>503,:number=>1234567 , :type=>"office"})
     test_number.save()
-    expect(test_number.number).to(eq([1234567]))
+    expect(test_number.number()).to(eq(1234567))
   end
 end
 
@@ -43,7 +48,7 @@ describe('#type') do
   it('returns the number type') do
     test_number = Phone.new({:area_code=>503,:number=>1234567 , :type=>"office"})
     test_number.save()
-    expect(test_number.type).to(eq(["office"]))
+    expect(test_number.type()).to(eq("office"))
   end
 end
 

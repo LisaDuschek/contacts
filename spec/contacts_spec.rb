@@ -1,5 +1,6 @@
 require('rspec')
 require('contacts')
+require('phone')
 
 describe('Contact') do
 
