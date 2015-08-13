@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h1>Your Contact Details</h1>
+</div>
+
+<%= @contact.first_name() %>
+
+<!-- <% @contact.phones().each() do |phone| %>
+  <%= phone.number() %>
+<% end %> -->
+
+<h4>Add your contact details</h4>
+<form action="/contact_details" method="post">
+
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input id="area_code" name="area_code" class="form-control" type="number" placeholder="area code">
+    <input id="number" name="number" class="form-control" type="number" placeholder="phone">
+    <input id="type" name="type" class="form-control" type="text" placeholder="type">
+  </div>
+
+   <div class="form-group">
+    <label for="mailing_adress">Mailing adress:</label>
+    <input id="street" name="street" class="form-control" type="text" placeholder="add contact's street">
+    <input id="city" name="city" class="form-control" type="text" placeholder="city">
+    <input id="type" name="type" class="form-control" type="text" placeholder="type">
+    <input id="state" name="state" class="form-control" type="text" placeholder="state">
+    <input id="zip" name="zip" class="form-control" type="text" placeholder="zip">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="adress" name="adress" class="form-control" type="text" placeholder="add adress">
+    <input id="type" name="type" class="form-control" type="text" placeholder="type">
+
+
+  <button type="submit" class="btn btn-info">Add yo contact ya! Bitch!</button>
+</form>

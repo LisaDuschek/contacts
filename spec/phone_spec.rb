@@ -4,9 +4,9 @@ require('phone')
 
 describe('Phone') do
 
-  # before() do
-  #   Phone.clear()
-  # end
+  before() do
+    Phone.clear()
+  end
 
   describe('.all') do
     it('creates an empty array')do
