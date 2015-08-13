@@ -8,17 +8,19 @@ get("/") do  # goes to URL
   erb(:index)   # home page file name
 end
 
-post('/success') do
+post('/saved_contacts') do
   first_name = params.fetch("first_name")
   last_name = params.fetch("last_name")
   job_title = params.fetch("job_title")
   company = params.fetch("company")
-  contact = Contact.new({:first_name=>"Lisa",:last_name=> "VanHausen", :job_title=>"Pet Groomer",:company=> "ACME"})
+  contact = Contact.new({:first_name=>first_name,:last_name=> last_name, :job_title=>job_title,:company=> company})
   contact.save()
   erb(:success)
 end
 
-get("/saved_contacts") do
+get('/saved_contacts') do
+  @saved_contacts = Contact.all()
+
   erb(:saved_contacts)
 end
 

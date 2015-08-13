@@ -1,1 +1,16 @@
-<h2>Below are all your contacts</h2>
+<div class="jumbotron">
+  <h2>Mein Kontakts</h2>
+</div>
+<ul>    <!--  display each vehicle model as a link  -->
+
+  <% @saved_contacts.each() do |contact| %>
+
+  <li><a href="/saved_contacts/<%= contact.first_name() %>">
+    <%= contact.first_name() %>
+    <%= contact.last_name() %>
+    <%= contact.job_title() %>
+    <%= contact.company() %> </a></li>
+
+
+    <% end %>
+  </ul>
